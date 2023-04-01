@@ -1,8 +1,8 @@
-from vector import Vector2D, i_2d_vector, j_2d_vector
+from vector import Vector2d, i_2d_vector, j_2d_vector
 
 
-class LinearCombination2D():
-    def __init__(self, a: Vector2D, b: Vector2D):
+class LinearCombination2d:
+    def __init__(self, a: Vector2d, b: Vector2d):
         self.a = a
         self.b = b
         self.vector = a + b
