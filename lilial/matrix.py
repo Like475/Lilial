@@ -17,6 +17,7 @@ class Matrix2x2:
             (data[0][0], data[0][1]),
             (data[1][0], data[1][1])
         )
+        self._determinant = self.data[0][0] * self.data[1][1] - self.data[1][0] * self.data[0][1]
 
     def multiply(self, other):
         """
@@ -42,6 +43,10 @@ class Matrix2x2:
                 other.data[0][1] * self.data[1][0] + other.data[1][1] * self.data[1][1]
             )
         ))
+
+    @property
+    def determinant(self):
+        return self._determinant
 
 
 basis_matrix2x2 = Matrix2x2((

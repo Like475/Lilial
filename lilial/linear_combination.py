@@ -1,4 +1,4 @@
-from vector import Vector2d, i_2d_vector, j_2d_vector
+from .vector import Vector2d, i_2d_vector, j_2d_vector
 
 
 class LinearCombination2d:
