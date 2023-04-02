@@ -9,7 +9,7 @@ class Matrix2x2:
 
     Methods
     -------
-    mul(other)
+    multiply(other)
         Multiplies the matrix received at the input by this
     """
     def __init__(self, data: (tuple, list)):
@@ -18,7 +18,7 @@ class Matrix2x2:
             (data[1][0], data[1][1])
         )
 
-    def mul(self, other):
+    def multiply(self, other):
         """
         Multiplies the matrix received at the input by this
 
