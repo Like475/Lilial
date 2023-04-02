@@ -13,13 +13,16 @@ class Matrix2x2:
         Multiplies the matrix received at the input by this
     determinant
         Returns determinant
+    data
+        Returns data
     """
+
     def __init__(self, data: (tuple, list)):
-        self.data = (
+        self._data = (
             (data[0][0], data[0][1]),
             (data[1][0], data[1][1])
         )
-        self._determinant = self.data[0][0] * self.data[1][1] - self.data[1][0] * self.data[0][1]
+        self._determinant = self._data[0][0] * self._data[1][1] - self._data[1][0] * self._data[0][1]
 
     def multiply(self, other):
         """
@@ -37,14 +40,25 @@ class Matrix2x2:
         """
         return Matrix2x2((
             (
-                other.data[0][0] * self.data[0][0] + other.data[1][0] * self.data[0][1],
-                other.data[0][1] * self.data[0][0] + other.data[1][1] * self.data[0][1]
+                other._data[0][0] * self._data[0][0] + other._data[1][0] * self._data[0][1],
+                other._data[0][1] * self._data[0][0] + other._data[1][1] * self._data[0][1]
             ),
             (
-                other.data[0][0] * self.data[1][0] + other.data[1][0] * self.data[1][1],
-                other.data[0][1] * self.data[1][0] + other.data[1][1] * self.data[1][1]
+                other._data[0][0] * self._data[1][0] + other._data[1][0] * self._data[1][1],
+                other._data[0][1] * self._data[1][0] + other._data[1][1] * self._data[1][1]
             )
         ))
+
+    @property
+    def data(self) -> tuple:
+        """
+        Returns data
+
+        Returns
+        -------
+        tuple
+        """
+        return self._data
 
     @property
     def determinant(self) -> int:
