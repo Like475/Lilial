@@ -1,4 +1,4 @@
-from matrix import Matrix2x2
+from .matrix import Matrix2x2
 
 
 class Vector2d:

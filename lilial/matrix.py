@@ -9,16 +9,19 @@ class Matrix2x2:
 
     Methods
     -------
-    mul(other)
+    multiply(other)
         Multiplies the matrix received at the input by this
+    determinant
+        Returns determinant
     """
     def __init__(self, data: (tuple, list)):
         self.data = (
             (data[0][0], data[0][1]),
             (data[1][0], data[1][1])
         )
+        self._determinant = self.data[0][0] * self.data[1][1] - self.data[1][0] * self.data[0][1]
 
-    def mul(self, other):
+    def multiply(self, other):
         """
         Multiplies the matrix received at the input by this
 
@@ -42,6 +45,17 @@ class Matrix2x2:
                 other.data[0][1] * self.data[1][0] + other.data[1][1] * self.data[1][1]
             )
         ))
+
+    @property
+    def determinant(self) -> int:
+        """
+        Returns determinant
+
+        Returns
+        -------
+        int
+        """
+        return self._determinant
 
 
 basis_matrix2x2 = Matrix2x2((
