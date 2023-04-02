@@ -11,6 +11,8 @@ class Matrix2x2:
     -------
     multiply(other)
         Multiplies the matrix received at the input by this
+    determinant
+        Returns determinant
     """
     def __init__(self, data: (tuple, list)):
         self.data = (
@@ -45,7 +47,14 @@ class Matrix2x2:
         ))
 
     @property
-    def determinant(self):
+    def determinant(self) -> int:
+        """
+        Returns determinant
+
+        Returns
+        -------
+        int
+        """
         return self._determinant
 
 
