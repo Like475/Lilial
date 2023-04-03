@@ -3,7 +3,7 @@ from .vector import Vector2d, i_2d_vector, j_2d_vector
 
 class LinearCombination2d:
     """
-    A linear combination with its own span
+    Linear combination with its own span
 
     Parameters
     ----------
